@@ -16,11 +16,9 @@
 
 
 </ion-header>
-
-
 <ion-content padding>
     <ion-segment [(ngModel)]="pet">
-        <ion-segment-button value="dados">
+        <ion-segment-button value="dados" (click)='buscarCliente()'>
           Dados Pessoais
         </ion-segment-button>
         <ion-segment-button value="endereco">
@@ -34,6 +32,7 @@
       <ion-item>
 
         <h2>Ruby</h2>
+       
       </ion-item>
       ...
     </ion-list>

@@ -31,7 +31,7 @@ export class ClientePage {
   }
 
   buscarCliente():void {
-    this._pegarCliente.getCliente(this.cliente.nome)
+    this._pegarCliente.getCliente(this.cliente.cpf)
         .subscribe((data: Cliente) => this.cliente = data,
         error => console.log(error));
   }

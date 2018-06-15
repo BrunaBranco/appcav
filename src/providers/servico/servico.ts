@@ -23,7 +23,7 @@ export class ServicoProvider {
 
 
   //para pegar os dados do cliente
-  getCliente(nome: string): Observable<Cliente> {
+  getCliente(string: string): Observable<Cliente> {
     return this._http.get(this._Url)
         .map((response: Response) => <Cliente>response.json())
         .do(data => console.log('Todos: ' + JSON.stringify(data)))

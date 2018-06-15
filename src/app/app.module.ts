@@ -10,7 +10,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ClientePage } from '../pages/cliente/cliente';
 import { ServicoProvider } from '../providers/servico/servico';
-
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({
@@ -23,6 +23,7 @@ import { ServicoProvider } from '../providers/servico/servico';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    HttpModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -35,7 +36,8 @@ import { ServicoProvider } from '../providers/servico/servico';
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    ServicoProvider
+    ServicoProvider,
+    HttpModule
   ]
 })
 export class AppModule { }
