@@ -20,20 +20,28 @@ export class ClientePage {
   pet: string = "puppies";
 
   cliente: Cliente;
+  caneta: {};
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private _pegarCliente: ServicoProvider) {
-
+  constructor(public navCtrl: NavController, public navParams: NavParams, private pegarCliente: ServicoProvider) {
+    this.caneta = navParams.get('caneta');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ClientePage');
   }
 
-  buscarCliente():void {
-    this._pegarCliente.getCliente(this.cliente.cpf)
-        .subscribe((data: Cliente) => this.cliente = data,
-        error => console.log(error));
+  buscarCliente(event) {
+    this.pegarCliente.testeConexao(event.target.addEventListener).subscribe(
+      data => {
+        this.caneta = data.results;
+        console.log(data);
+      },
+      err => {
+        console.log(err);
+      },
+      () => console.log('teste')
+    );
   }
 
 }

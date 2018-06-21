@@ -1,7 +1,8 @@
 
 import { Injectable } from '@angular/core';
 
-import { Http, Response } from '@angular/http';
+// import { Http, Response } from '@angular/http';
+import {Http} from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 import { Cliente } from '../../cliente';
@@ -15,24 +16,23 @@ import { Cliente } from '../../cliente';
 @Injectable()
 export class ServicoProvider {
 
-  private _Url = 'http://modelos.4pix.com.br/cav/ProprietariosAPI/proprietario/10536';
 
-  constructor(private _http: Http) {
-    console.log('Hello ServicoProvider Provider');
+  constructor(private http:Http) {
+    console.log('entra no contrutor');
   }
 
+  // this.http.get(url).map(res => res.json());
 
-  //para pegar os dados do cliente
-  getCliente(string: string): Observable<Cliente> {
-    return this._http.get(this._Url)
-        .map((response: Response) => <Cliente>response.json())
-        .do(data => console.log('Todos: ' + JSON.stringify(data)))
-        .catch(this.handleError);
+  testeConexao(teste) {
+
+
+    var response = this.http.get('http://modelos.4pix.com.br/cav/SessaoAPI/login').map(res => res.json());
+    console.log(response);
+    return response;
 }
 
-private handleError(error: Response) {
-    console.error(error);
-    return Observable.throw(error.json().error || 'Server error');
-}
+
+
+
 
 }
