@@ -30,9 +30,9 @@
 <div [ngSwitch]="pet">
     <ion-list *ngSwitchCase="'dados'">
         <ion-list>
-            <ion-item *ngFor="let movie of caneta">
+            <ion-item *ngFor="let buscas of caneta">
 
-              <h2>{{movie.nome}}</h2>
+              <h2>{{buscas.nome}}</h2>
               <!-- <p class="item-description">{{movie.overview}}</p> -->
             </ion-item>
           </ion-list>
