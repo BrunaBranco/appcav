@@ -1,11 +1,8 @@
-
 import { Injectable } from '@angular/core';
-
-// import { Http, Response } from '@angular/http';
-import {Http} from '@angular/http';
-
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { Cliente } from '../../cliente';
+import { map, catchError } from 'rxjs/operators';
+import { Http, Response } from '@angular/http';
 
 /*
   Generated class for the ServicoProvider provider.
@@ -23,13 +20,35 @@ export class ServicoProvider {
 
   // this.http.get(url).map(res => res.json());
 
-  testeConexao(teste) {
+//   testeConexao(teste) {
+//     var url = 'http://modelos.4pix.com.br/cav/SessaoAPI/login';
+//     console.log();
+//     var response = this.http.get(url).map(res => res.json());
+//     return response;
+// }
 
+getProprietario(id_proprietario: String): Observable<Response> {
+  return this.http.get('http://modelos.4pix.com.br/cav/SessaoAPI/login');
 
-    var response = this.http.get('http://modelos.4pix.com.br/cav/SessaoAPI/login').map(res => res.json());
-    console.log(response);
-    return response;
 }
+
+  private extractData(res: Response) {
+    let body = res;
+    return body || { };
+  }
+
+  private handleError (error: Response | any) {
+    let errMsg: string;
+    if (error instanceof Response) {
+      const err = error || '';
+      errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+    } else {
+      errMsg = error.message ? error.message : error.toString();
+    }
+    console.error(errMsg);
+    return Observable.throw(errMsg);
+  }
+
 
 
 

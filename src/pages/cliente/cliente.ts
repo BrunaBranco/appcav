@@ -21,6 +21,10 @@ export class ClientePage {
 
   cliente: Cliente;
   caneta: {};
+  countries: any;
+  rest: any;
+  errorMessage: any;
+  servico: any;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private pegarCliente: ServicoProvider) {
@@ -31,17 +35,10 @@ export class ClientePage {
     console.log('ionViewDidLoad ClientePage');
   }
 
-  buscarCliente(event) {
-    this.pegarCliente.testeConexao(event.target.addEventListener).subscribe(
-      data => {
-        this.caneta = data.results;
-        console.log(data);
-      },
-      err => {
-        console.log(err);
-      },
-      () => console.log('teste')
-    );
+  buscarCliente() {
+    this.pegarCliente.getProprietario('123')
+      .subscribe(res => {
+        this.cliente = res.json() as Cliente;
+      });
   }
-
 }
