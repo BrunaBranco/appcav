@@ -21,24 +21,6 @@ export class ServicoProvider {
   }
 
 
-
-  // private extractData(res: Response) {
-  //   let body = res;
-  //   return body || { };
-  // }
-
-  // private handleError (error: Response | any) {
-  //   let errMsg: string;
-  //   if (error instanceof Response) {
-  //     const err = error || '';
-  //     errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
-  //   } else {
-  //     errMsg = error.message ? error.message : error.toString();
-  //   }
-  //   console.error(errMsg);
-  //   return Observable.throw(errMsg);
-  // }
-
   login(user: any): Observable<Response> {
     let url = 'http://modelos.4pix.com.br/cav/SessaoAPI/login';
     return this.http.post(url, user);
@@ -52,11 +34,6 @@ export class ServicoProvider {
 
 
   buscarCliente() {
-    this.servico.getDadosProprietario({ id: '39159' })
-      .subscribe(
-        res => console.log("RESPOSTA PROPRIETARIO:", res),
-        error => console.log(error)
-      );
     this.servico.login({
       username: 'johhny',
       password: '123'
@@ -65,6 +42,12 @@ export class ServicoProvider {
         res => console.log(res),
         error => console.log(error)
       );
+    this.servico.getDadosProprietario({ id: '39159' })
+      .subscribe(
+        res => console.log("RESPOSTA PROPRIETARIO:", res),
+        error => console.log(error)
+      );
+
   }
 
 }

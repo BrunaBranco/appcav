@@ -28,7 +28,7 @@ export class ClientePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ClientePage');
-    this.pegarCliente.buscarCliente();
+
   }
 
 
