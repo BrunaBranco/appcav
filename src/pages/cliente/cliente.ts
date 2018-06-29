@@ -16,19 +16,32 @@ import { ServicoProvider } from '../../providers/servico/servico';
   templateUrl: 'cliente.html',
 })
 export class ClientePage {
+  proprietario: any = {};
+  login: any;
 
-  pet: string = "puppies";
-
-  cliente: Cliente;
-  caneta: {};
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, private pegarCliente: ServicoProvider) {
-    this.caneta = navParams.get('caneta');
+  constructor(public navCtrl: NavController, public navParams: NavParams, private servico: ServicoProvider) {
+    this.servico.login({
+      username: 'johhny',
+      password: '123'
+    })
+      .subscribe(
+        res => console.log(res.json()),
+        error => console.log(error)
+      );
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ClientePage');
 
+  }
+
+  
+  getDadosProprietario() {
+    this.servico.getDadosProprietario({ id: '39159' })
+      .subscribe(
+        res => console.log("RESPOSTA PROPRIETARIO:", res),
+        error => console.log("ERRO PROPRIETARIO", error)
+      );
   }
 
 
