@@ -18,7 +18,7 @@
 </ion-header>
 <ion-content padding>
     <ion-segment [(ngModel)]="pet">
-        <ion-segment-button value="dados"(click)='buscarCliente($event)'>
+        <ion-segment-button value="dados"(click)='ionViewDidLoad()'>
           Dados Pessoais
         </ion-segment-button>
         <ion-segment-button value="endereco">
@@ -32,7 +32,7 @@
         <ion-list>
             <ion-item *ngFor="let buscas of caneta">
 
-              <h2>{{buscas.nome}}</h2>
+              <h2>{{buscas.id}}</h2>
               <!-- <p class="item-description">{{movie.overview}}</p> -->
             </ion-item>
           </ion-list>

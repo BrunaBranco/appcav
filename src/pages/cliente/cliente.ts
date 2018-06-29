@@ -21,11 +21,6 @@ export class ClientePage {
 
   cliente: Cliente;
   caneta: {};
-  countries: any;
-  rest: any;
-  errorMessage: any;
-  servico: any;
-
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private pegarCliente: ServicoProvider) {
     this.caneta = navParams.get('caneta');
@@ -33,12 +28,9 @@ export class ClientePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ClientePage');
+    this.pegarCliente.buscarCliente();
   }
 
-  buscarCliente() {
-    this.pegarCliente.getProprietario('123')
-      .subscribe(res => {
-        this.cliente = res.json() as Cliente;
-      });
-  }
+
+
 }
