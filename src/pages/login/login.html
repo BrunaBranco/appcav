@@ -9,34 +9,35 @@
 </ion-header>
 
 <ion-content class="login-content teste" padding>
-    <ion-row class="logo-row">
-        <ion-col></ion-col>
-        <ion-col width-67>
-          <img src="../../../../assets/imgs/logo-cav.png"/>
-        </ion-col>
-        <ion-col></ion-col>
-      </ion-row>
+  <ion-row class="logo-row">
+    <ion-col></ion-col>
+    <ion-col width-67>
+      <img src="../../../../assets/imgs/logo-cav.png" />
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
 
   <div class="login-box">
-    <form>
+    <form (ngSubmit)="getDadosProprietario()">
       <ion-row>
         <ion-col>
           <ion-list inset>
+            <ion-item>
+              <ion-input type="text" placeholder="Ficha" name="ficha" [(ngModel)]="registerCredentials.ficha" required></ion-input>
+            </ion-item>
 
             <ion-item>
-              <ion-input type="text" placeholder="Email" name="email" required></ion-input>
+              <ion-input type="password" placeholder="CPF" name="cpf" [(ngModel)]="registerCredentials.cpf" required></ion-input>
             </ion-item>
-            <ion-item>
-              <ion-input type="password" placeholder="Password" name="password" required></ion-input>
-            </ion-item>
+
           </ion-list>
         </ion-col>
       </ion-row>
       <ion-row>
 
         <ion-col class="signup-col">
-            <label *ngIf="login">Login com sucesso</label>
-            <label>Proprietario: {{proprietario.id}} - {{proprietario.nome}}</label>
+          <!-- <label *ngIf="login">Login com sucesso</label>
+          <label>Proprietario: {{proprietario.id}} - {{proprietario.nome}}</label> -->
 
           <button ion-button class="submit-btn" full type="submit" (click)="getDadosProprietario()">Login</button>
         </ion-col>

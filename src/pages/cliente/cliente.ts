@@ -15,7 +15,7 @@ import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
   templateUrl: 'cliente.html',
 })
 export class ClientePage {
- 
+  cliente:any[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 

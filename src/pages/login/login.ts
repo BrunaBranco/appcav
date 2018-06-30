@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, LoadingController, Loading } from 'ionic-angular';
 import { ServicoProvider } from '../../providers/servico/servico';
+import { AuthService } from '../../providers/servico/auth-service';
 
 /**
  * Generated class for the LoginPage page.
@@ -19,10 +20,17 @@ export class LoginPage {
   proprietario: any = {};
   login: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private servico: ServicoProvider) {
+  loading: Loading;
+  registerCredentials = { ficha: '', cpf: '' };
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              private servico: ServicoProvider, private auth: AuthService,
+              private alertCtrl: AlertController,private loadingCtrl: LoadingController) {
+
     this.servico.login({
       username: 'johhny',
       password: '123'
+
     })
       .subscribe(
         res => console.log(res.json()),
@@ -38,4 +46,43 @@ export class LoginPage {
       console.log("consultou.....");
   }
 
+
+  public loginLince() {
+
+    this.showLoading()
+
+    this.auth.loginLince(this.registerCredentials).subscribe(allowed => {
+      console.log("teste"+this.registerCredentials);
+      if (allowed) {
+        this.getDadosProprietario();
+        this.navCtrl.setRoot('HomePage');
+      } else {
+        this.showError("Acesso negado");
+      }
+    },
+      error => {
+        this.showError(error);
+      });
+  }
+
+  showLoading() {
+    this.loading = this.loadingCtrl.create({
+      content: 'Por favor aguarde...',
+      dismissOnPageChange: true
+    });
+    this.loading.present();
+  }
+
+  showError(text) {
+    this.loading.dismiss();
+
+    let alert = this.alertCtrl.create({
+      title: 'Fail',
+      subTitle: text,
+      buttons: ['OK']
+    });
+  }
+
 }
+
+

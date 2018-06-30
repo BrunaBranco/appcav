@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { AuthService } from '../../providers/servico/auth-service';
 
 
 /*
@@ -16,7 +17,7 @@ export class ServicoProvider {
   servico:any;
 
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private auth: AuthService) {
 
   }
 

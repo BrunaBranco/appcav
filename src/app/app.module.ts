@@ -13,6 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ClientePage } from '../pages/cliente/cliente';
 import { ServicoProvider } from '../providers/servico/servico';
 import { HttpModule } from '@angular/http';
+import { AuthService } from '../providers/servico/auth-service';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { HttpModule } from '@angular/http';
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     ServicoProvider,
-    HttpModule
+    HttpModule,
+    AuthService
   ]
 })
 export class AppModule { }
