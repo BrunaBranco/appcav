@@ -17,7 +17,7 @@
 
 </ion-header>
 <ion-content padding>
-    <ion-segment [(ngModel)]="pet">
+    <ion-segment [(ngModel)]="proprietario">
         <ion-segment-button value="dados"(click)='getDadosProprietario()'>
           Dados Pessoais
         </ion-segment-button>
@@ -27,23 +27,19 @@
       </ion-segment>
 
 </ion-content>
-<div [ngSwitch]="pet">
+<div [ngSwitch]="proprietario">
     <ion-list *ngSwitchCase="'dados'">
         <ion-list>
             <ion-item >
-
-              
-              <label *ngIf="login">Login com sucesso</label>
-              <label>Proprietario: {{proprietario.id}} - {{proprietario.nome}}</label>
               <!-- <p class="item-description">{{movie.overview}}</p> -->
             </ion-item>
           </ion-list>
     </ion-list>
 
     <ion-list *ngSwitchCase="'endereco'">
-      <ion-item *ngIf="cliente">
+      <ion-item *ngIf="proprietario">
 
-        <h2>{{cliente.nome}}</h2>
+        <h2>{{proprietario.nome}}</h2>
       </ion-item>
       ...
     </ion-list>

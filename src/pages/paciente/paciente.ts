@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
-
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the ClientePage page.
+ * Generated class for the PacientePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,19 +10,16 @@ import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-cliente',
-  templateUrl: 'cliente.html',
+  selector: 'page-paciente',
+  templateUrl: 'paciente.html',
 })
-export class ClientePage {
- 
+export class PacientePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ClientePage');
-
+    console.log('ionViewDidLoad PacientePage');
   }
 
 }

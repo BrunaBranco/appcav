@@ -26,8 +26,8 @@ export class ServicoProvider {
     return this.http.post(url, user);
   }
 
-  getDadosProprietario(proprietario: any): Observable<Response> {
-    let url = 'http://modelos.4pix.com.br/cav/ProprietariosAPI/proprietario/' + proprietario.id;
+  getDadosProprietario(login: any): Observable<Response> {
+    let url = 'http://modelos.4pix.com.br/cav/AppAPI/proprietario/' + login.cpf + "/" + login.ficha;
     return this.http.get(url);
   }
 

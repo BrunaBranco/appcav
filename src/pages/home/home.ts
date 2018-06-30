@@ -1,7 +1,7 @@
 import { ServicoProvider } from './../../providers/servico/servico';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Cliente } from '../../cliente';
+
 
 @Component({
   selector: 'page-home',
