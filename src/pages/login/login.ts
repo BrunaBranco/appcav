@@ -50,7 +50,7 @@ export class LoginPage {
         res => this.storage.set('paciente', res.json())
 
       );
-      console.log(" testetetatdsadgasdgasgdtas" + this.getDadosPaciente());
+    console.log(" testetetatdsadgasdgasgdtas" + this.getDadosPaciente());
   }
 
   getDadosProprietario() {
@@ -66,17 +66,18 @@ export class LoginPage {
 
   public loginLince() {
 
-    this.showLoading()
+    this.showLoading();
 
     this.auth.loginL(this.registerCredentials).subscribe(allowed => {
 
-      this.navCtrl.setRoot(HomePage);
-      // if (allowed) {
-      //   console.log("wqeqeqweqr232423434");
 
-      // } else {
-      //   this.showError("Acesso negado");
-      // }
+      if (!allowed) {
+        this.navCtrl.setRoot(HomePage);
+        console.log(" testetettstesttete " + allowed);
+
+      } else {
+        this.showError("Acesso negado");
+      }
     },
       error => {
         this.showError(error);
@@ -93,11 +94,11 @@ export class LoginPage {
 
   showError(text) {
     this.loading.dismiss();
-    // let alert = this.alertCtrl.create({
-    //   title: 'Fail',
-    //   subTitle: text,
-    //   buttons: ['OK']
-    // });
+    let alert = this.alertCtrl.create({
+      title: 'Fail',
+      subTitle: text,
+      buttons: ['OK']
+    });
   }
 
 }
