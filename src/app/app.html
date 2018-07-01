@@ -1,11 +1,14 @@
 <ion-menu [content]="content">
   <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
+    <ion-toolbar color="mycolor">
+      <button ion-buttons (click)="volta()" class="botao">
+        <img src="../../../../assets/imgs/logo-cav.png" style="width: 67px" />
+      </button>
+
     </ion-toolbar>
   </ion-header>
 
-  <ion-content>
+  <ion-content  color="menu">
     <ion-list>
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}

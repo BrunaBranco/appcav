@@ -18,6 +18,7 @@ import { Storage } from '@ionic/storage';
 export class ClientePage {
 
   teste: any = {};
+  pet: string = "puppies";
 
 
 

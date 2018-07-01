@@ -6,11 +6,11 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar  color="mycolor">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>cliente</ion-title>
+    <ion-title>Cliente</ion-title>
   </ion-navbar>
 
 
@@ -18,11 +18,72 @@
 </ion-header>
 <ion-content padding>
 
-  <ion-label>Nome: {{teste.nome}}</ion-label>
-  <ion-label>CPF: {{teste.cpf}}</ion-label>
-  <ion-label>RG: {{teste.identificacao}}</ion-label>
-  <ion-label>Telefone(fixo): {{teste.telefone1}}</ion-label>
-  <ion-label>Telefone (Celular): {{teste.telefone2}}</ion-label>
+
+  <div padding>
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button value="puppies">
+        Dados Básicos
+      </ion-segment-button>
+
+      <ion-segment-button value="kittens">
+        Dados de Endereço
+      </ion-segment-button>
+
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="pet">
+
+    <ion-list *ngSwitchCase="'puppies'">
+      <ion-item>
+        <ion-label>Nome: {{teste.nome}}</ion-label>
+
+      </ion-item>
+      <ion-item>
+        <ion-label>CPF: {{teste.cpf}}</ion-label>
+
+      </ion-item>
+      <ion-item>
+
+        <ion-label>RG: {{teste.identificacao}}</ion-label>
+      </ion-item>
+      <ion-item>
+
+        <ion-label>Telefone(fixo): {{teste.telefone1}}</ion-label>
+
+      </ion-item>
+      <ion-item>
+
+        <ion-label>Telefone (Celular): {{teste.telefone2}}</ion-label>
+      </ion-item>
+
+    </ion-list>
+
+
+    <ion-list *ngSwitchCase="'kittens'">
+      <ion-item>
+        <ion-label>Endereço: {{teste.endereco}}</ion-label>
+
+      </ion-item>
+      <ion-item>
+        <ion-label>Bairro: {{teste.bairro}}</ion-label>
+
+      </ion-item>
+      <ion-item>
+
+        <ion-label>Cidade: {{teste.cidade}}</ion-label>
+      </ion-item>
+      <ion-item>
+
+        <ion-label>CEP: {{teste.cep}}</ion-label>
+
+      </ion-item>
+    </ion-list>
+  </div>
+
+
+
+
 
 
 </ion-content>
