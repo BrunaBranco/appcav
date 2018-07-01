@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 
 /**
@@ -15,14 +16,16 @@ import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
   templateUrl: 'cliente.html',
 })
 export class ClientePage {
-  cliente:any[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  teste: any = {};
 
-  }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ClientePage');
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
+    storage.get('cliente').then((val) => {
+      this.teste = val;
+      console.log('cliente', val);
+    });
 
   }
 

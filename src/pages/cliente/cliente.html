@@ -7,9 +7,9 @@
 <ion-header>
 
   <ion-navbar>
-      <button ion-button menuToggle>
-          <ion-icon name="menu"></ion-icon>
-        </button>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>cliente</ion-title>
   </ion-navbar>
 
@@ -17,30 +17,12 @@
 
 </ion-header>
 <ion-content padding>
-    <ion-segment [(ngModel)]="cliente">
-        <ion-segment-button value="dados">
-          Dados Pessoais
-        </ion-segment-button>
-        <ion-segment-button value="endereco">
-          Endereço
-        </ion-segment-button>
-      </ion-segment>
+
+  <ion-label>Nome: {{teste.nome}}</ion-label>
+  <ion-label>CPF: {{teste.cpf}}</ion-label>
+  <ion-label>RG: {{teste.identificacao}}</ion-label>
+  <ion-label>Telefone(fixo): {{teste.telefone1}}</ion-label>
+  <ion-label>Telefone (Celular): {{teste.telefone2}}</ion-label>
+
 
 </ion-content>
-<div [ngSwitch]="cliente">
-    <ion-list *ngSwitchCase="'dados'">
-        <ion-list>
-            <ion-item >
-              <!-- <p class="item-description">{{movie.overview}}</p> -->
-            </ion-item>
-          </ion-list>
-    </ion-list>
-
-    <ion-list *ngSwitchCase="'endereco'">
-      <ion-item *ngIf="cliente">
-
-        <!-- <h2>{{cliente.nome}}</h2> -->
-      </ion-item>
-      ...
-    </ion-list>
-  </div>

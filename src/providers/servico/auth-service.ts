@@ -16,7 +16,7 @@ export class User {
 export class AuthService {
   currentUser: User;
 
-  public loginLince(credenciais) {
+  public loginL(credenciais) {
     if (credenciais.cpf === null || credenciais.ficha === null) {
       return Observable.throw("por favor insira suas credenciais");
     } else {

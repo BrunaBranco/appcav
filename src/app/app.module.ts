@@ -14,6 +14,8 @@ import { ClientePage } from '../pages/cliente/cliente';
 import { ServicoProvider } from '../providers/servico/servico';
 import { HttpModule } from '@angular/http';
 import { AuthService } from '../providers/servico/auth-service';
+import { IonicStorageModule } from '@ionic/storage';
+import {Cliente} from '../cliente';
 
 
 @NgModule({
@@ -28,6 +30,7 @@ import { AuthService } from '../providers/servico/auth-service';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -43,7 +46,8 @@ import { AuthService } from '../providers/servico/auth-service';
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     ServicoProvider,
     HttpModule,
-    AuthService
+    AuthService,
+    Cliente
   ]
 })
 export class AppModule { }

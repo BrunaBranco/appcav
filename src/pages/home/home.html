@@ -1,12 +1,40 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar >
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>
+      <img src="../../../../assets/imgs/logo-cav.png" style="width: 67px" />
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding >
-  <!-- <button ion-button (click)="getDadosProprietario()">Dados Proprietários</button> -->
+<ion-content padding>
+
+  <ion-card class="cor">
+
+    <img src="../../../../assets/imgs/logo-cav.png" />
+
+    <ion-card-content>
+      <ion-card-title>
+       LinceApp
+      </ion-card-title>
+      <p>
+       Bem vindo ao aplicativo LINCE aqui você pode ter acessoa a informações sem burocrácia
+      </p>
+      <p>
+        Acesso o nosso menu ao lado para escolher a opção desejada
+      </p>
+
+    </ion-card-content>
+
+
+  </ion-card>
+
+
 </ion-content>
