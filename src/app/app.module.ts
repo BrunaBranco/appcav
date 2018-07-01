@@ -4,8 +4,8 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import {LoginPage} from '../pages/login/login';
-import {PacientePage} from '../pages/paciente/paciente';
+import { LoginPage } from '../pages/login/login';
+import { PacientePage } from '../pages/paciente/paciente';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -15,7 +15,9 @@ import { ServicoProvider } from '../providers/servico/servico';
 import { HttpModule } from '@angular/http';
 import { AuthService } from '../providers/servico/auth-service';
 import { IonicStorageModule } from '@ionic/storage';
-import {Cliente} from '../cliente';
+import { Cliente } from '../cliente';
+import { FinanceiroPage } from '../pages/financeiro/financeiro';
+import {AtendimentoPage} from '../pages/atendimento/atendimento';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import {Cliente} from '../cliente';
     HomePage,
     ClientePage,
     LoginPage,
-    PacientePage
+    PacientePage,
+    FinanceiroPage,
+    AtendimentoPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,9 @@ import {Cliente} from '../cliente';
     HomePage,
     ClientePage,
     LoginPage,
-    PacientePage
+    PacientePage,
+    FinanceiroPage,
+    AtendimentoPage
   ],
   providers: [
     StatusBar,

@@ -48,7 +48,9 @@ export class LoginPage {
     this.servico.getDadosPaciente(this.registerCredentials)
       .subscribe(
         res => this.storage.set('paciente', res.json())
+
       );
+      console.log(" testetetatdsadgasdgasgdtas" + this.getDadosPaciente());
   }
 
   getDadosProprietario() {
@@ -91,11 +93,11 @@ export class LoginPage {
 
   showError(text) {
     this.loading.dismiss();
-    let alert = this.alertCtrl.create({
-      title: 'Fail',
-      subTitle: text,
-      buttons: ['OK']
-    });
+    // let alert = this.alertCtrl.create({
+    //   title: 'Fail',
+    //   subTitle: text,
+    //   buttons: ['OK']
+    // });
   }
 
 }

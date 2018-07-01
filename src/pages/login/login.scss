@@ -1,5 +1,5 @@
 page-login {
-  login-content {
+  .login-content {
     background-image: url('../../../../assets/imgs/bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -17,6 +17,7 @@ ion-row {
   align-items: center;
   text-align: center;
 }
+
 ion-item {
   border-radius: 30px !important;
   padding-left: 30px !important;
@@ -26,6 +27,7 @@ ion-item {
   border-bottom: 0px !important;
   box-shadow: none !important;
 }
+
 .signup-col {
   margin: 0px 16px 0px 16px;
   padding-bottom: 20px;
@@ -35,7 +37,6 @@ ion-item {
   padding-top: 50px;
   padding-bottom: 20px;
 }
-
 
 .register-btn {
   color: #ffffff;

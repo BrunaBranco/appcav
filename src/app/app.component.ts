@@ -1,13 +1,16 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform} from 'ionic-angular';
+import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { LoginPage } from '../pages/login/login';
-import { PacientePage} from '../pages/paciente/paciente';
+import { PacientePage } from '../pages/paciente/paciente';
 
 import { ClientePage } from '../pages/cliente/cliente';
 import { HomePage } from '../pages/home/home';
+import { FinanceiroPage } from '../pages/financeiro/financeiro';
+import { AtendimentoPage } from '../pages/atendimento/atendimento';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -20,13 +23,15 @@ export class MyApp {
   pages: Array<{ title: string, component: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar,
-     public splashScreen: SplashScreen) {
+    public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Dados do Cliente', component: ClientePage },
-      { title: 'Dados do Paciente', component: PacientePage}
+      { title: 'Dados do Paciente', component: PacientePage },
+      { title: 'Dados Financeiro', component: FinanceiroPage },
+      {title: ' Acompanhar atendimento', component: AtendimentoPage}
 
     ];
 
@@ -46,7 +51,7 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
-   volta(){
+  volta() {
     this.nav.setRoot(HomePage);
-   }
+  }
 }

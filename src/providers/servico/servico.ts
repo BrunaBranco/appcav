@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { AuthService } from '../../providers/servico/auth-service';
+
 
 
 /*
@@ -33,7 +33,7 @@ export class ServicoProvider {
   }
   getDadosPaciente(paciente: any){
     let url= 'http://modelos.4pix.com.br/cav/PacientesAPI/pacientes/13050';
-    return this.http.get(url, paciente);
+    return this.http.get(url);
   }
 
 
