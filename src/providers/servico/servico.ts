@@ -17,7 +17,7 @@ export class ServicoProvider {
   servico:any;
 
 
-  constructor(private http: Http, private auth: AuthService) {
+  constructor(private http: Http) {
 
   }
 
@@ -31,24 +31,28 @@ export class ServicoProvider {
     let url = 'http://modelos.4pix.com.br/cav/AppAPI/proprietario/' + login.cpf + "/" + login.ficha;
     return this.http.get(url);
   }
-
-
-
-  buscarCliente() {
-    this.servico.login({
-      username: 'johhny',
-      password: '123'
-    })
-      .subscribe(
-        res => console.log(res),
-        error => console.log(error)
-      );
-    this.servico.getDadosProprietario({ id: '39159' })
-      .subscribe(
-        res => console.log("RESPOSTA PROPRIETARIO:", res),
-        error => console.log(error)
-      );
-
+  getDadosPaciente(paciente: any){
+    let url= 'http://modelos.4pix.com.br/cav/PacientesAPI/pacientes/13050';
+    return this.http.get(url, paciente);
   }
+
+
+
+  // buscarCliente() {
+  //   this.servico.login({
+  //     username: 'johhny',
+  //     password: '123'
+  //   })
+  //     .subscribe(
+  //       res => console.log(res),
+  //       error => console.log(error)
+  //     );
+  //   this.servico.getDadosProprietario({ id: '39159' })
+  //     .subscribe(
+  //       res => console.log("RESPOSTA PROPRIETARIO:", res),
+  //       error => console.log(error)
+  //     );
+
+  // }
 
 }

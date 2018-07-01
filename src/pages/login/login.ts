@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams, AlertController, LoadingController
 import { ServicoProvider } from '../../providers/servico/servico';
 import { AuthService } from '../../providers/servico/auth-service';
 
-import { IonicStorageModule } from '@ionic/storage';
 import { Storage } from '@ionic/storage';
 
 import { HomePage } from '../home/home';
@@ -45,15 +44,21 @@ export class LoginPage {
     //   );
   }
 
+  getDadosPaciente() {
+    this.servico.getDadosPaciente(this.registerCredentials)
+      .subscribe(
+        res => this.storage.set('paciente', res.json())
+      );
+  }
+
   getDadosProprietario() {
     this.servico.getDadosProprietario(this.registerCredentials)
       .subscribe(
 
         // res => console.log("RESPOSTA PROPRIETARIO:", res),
         // error => console.log("ERRO PROPRIETARIO", error),
-       res => this.storage.set('cliente',res.json())
+        res => this.storage.set('cliente', res.json())
       );
-    console.log("consultou.....");
   }
 
 
