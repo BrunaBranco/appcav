@@ -18,6 +18,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { Cliente } from '../cliente';
 import { FinanceiroPage } from '../pages/financeiro/financeiro';
 import {AtendimentoPage} from '../pages/atendimento/atendimento';
+import { TrocarSenhaPage } from '../pages/trocar-senha/trocar-senha';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {AtendimentoPage} from '../pages/atendimento/atendimento';
     LoginPage,
     PacientePage,
     FinanceiroPage,
-    AtendimentoPage
+    AtendimentoPage,
+    TrocarSenhaPage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,8 @@ import {AtendimentoPage} from '../pages/atendimento/atendimento';
     LoginPage,
     PacientePage,
     FinanceiroPage,
-    AtendimentoPage
+    AtendimentoPage,
+    TrocarSenhaPage
   ],
   providers: [
     StatusBar,

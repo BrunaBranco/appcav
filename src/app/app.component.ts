@@ -12,6 +12,7 @@ import { FinanceiroPage } from '../pages/financeiro/financeiro';
 import { AtendimentoPage } from '../pages/atendimento/atendimento';
 
 
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -31,7 +32,7 @@ export class MyApp {
       { title: 'Dados do Cliente', component: ClientePage },
       { title: 'Dados do Paciente', component: PacientePage },
       { title: 'Dados Financeiro', component: FinanceiroPage },
-      {title: ' Acompanhar atendimento', component: AtendimentoPage}
+      { title: ' Acompanhar atendimento', component: AtendimentoPage }
 
     ];
 

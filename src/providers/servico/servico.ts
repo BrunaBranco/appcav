@@ -21,18 +21,25 @@ export class ServicoProvider {
 
   }
 
-
+// faz login no sistema e carrega os dados da sessão
   login(user: any): Observable<Response> {
     let url = 'http://modelos.4pix.com.br/cav/SessaoAPI/login';
     return this.http.post(url, user);
   }
 
+  // atraves do login retorna os dados do proprietario do animal
   getDadosProprietario(login: any): Observable<Response> {
     let url = 'http://modelos.4pix.com.br/cav/AppAPI/proprietario/' + login.cpf + "/" + login.ficha;
     return this.http.get(url);
   }
+<<<<<<< HEAD
   getDadosPaciente(paciente: any){
     let url= 'http://modelos.4pix.com.br/cav/AppAPI/pacientes/' + paciente.id_paciente;
+=======
+
+  getDadosPaciente(login: any){
+    let url= 'http://modelos.4pix.com.br/cav/PacientesAPI/pacientes/13050';
+>>>>>>> 0f90f605e01a76232fe9f7e62cfd2318a7c74a75
     return this.http.get(url);
   }
 
