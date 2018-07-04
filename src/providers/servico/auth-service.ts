@@ -30,6 +30,18 @@ export class AuthService {
     }
   }
 
+  public trocarSenha(trocarSenha) {
+    if (trocarSenha.cpf === null || trocarSenha.ficha === null) {
+      return Observable.throw("Por favor insera seus dados");
+    } else {
+      // At this point store the credentials to your backend!
+      return Observable.create(observer => {
+        observer.next(true);
+        observer.complete();
+      });
+    }
+  }
+
 
   public getUserInfo() : User {
     return this.currentUser;

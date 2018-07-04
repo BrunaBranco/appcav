@@ -29,4 +29,8 @@ export class HomePage {
     });
   }
 
+  public trocarSenha() {
+    this.navCtrl.push('trocar-senhar');
+  }
+
 }
