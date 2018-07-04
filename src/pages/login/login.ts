@@ -32,16 +32,6 @@ export class LoginPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private servico: ServicoProvider, private auth: AuthService,
     private alertCtrl: AlertController, private loadingCtrl: LoadingController, private storage: Storage) {
-
-    // this.servico.login({
-    //   username: 'johhny',
-    //   password: '123'
-
-    // })
-    //   .subscribe(
-    //     res => console.log(res.json()),
-    //     error => console.log(error)
-    //   );
   }
 
   getDadosPaciente() {
@@ -53,28 +43,20 @@ export class LoginPage {
     console.log(" testetetatdsadgasdgasgdtas" + this.getDadosPaciente());
   }
 
+  // busca os dados de proprietario atraves das credencias
   getDadosProprietario() {
     this.servico.getDadosProprietario(this.registerCredentials)
       .subscribe(
-
-        // res => console.log("RESPOSTA PROPRIETARIO:", res),
-        // error => console.log("ERRO PROPRIETARIO", error),
         res => this.storage.set('cliente', res.json())
       );
   }
 
-
+  // esse metodo faz a validação do login no sistema
   public loginLince() {
-
     this.showLoading();
-
     this.auth.loginL(this.registerCredentials).subscribe(allowed => {
-
-
       if (!allowed) {
         this.navCtrl.setRoot(HomePage);
-        console.log(" testetettstesttete " + allowed);
-
       } else {
         this.showError("Acesso negado");
       }
