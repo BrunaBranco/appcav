@@ -60,6 +60,7 @@ export class LoginPage {
         // res => console.log("RESPOSTA PROPRIETARIO:", res),
         // error => console.log("ERRO PROPRIETARIO", error),
         res => this.storage.set('cliente', res.json())
+        
       );
   }
 
