@@ -26,7 +26,6 @@ export class ClientePage {
       this.teste = val;
       console.log('cliente', val);
     });
-
   }
 
 }
