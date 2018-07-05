@@ -32,9 +32,14 @@ export class ServicoProvider {
     let url = 'http://modelos.4pix.com.br/cav/AppAPI/proprietario/' + login.cpf + "/" + login.ficha;
     return this.http.get(url);
   }
+<<<<<<< HEAD
+  getDadosPaciente(paciente: any){
+    let url= 'http://modelos.4pix.com.br/cav/AppAPI/pacientes/' + paciente.id_paciente;
+=======
 
   getDadosPaciente(login: any){
     let url= 'http://modelos.4pix.com.br/cav/PacientesAPI/pacientes/13050';
+>>>>>>> 0f90f605e01a76232fe9f7e62cfd2318a7c74a75
     return this.http.get(url);
   }
 

@@ -48,6 +48,7 @@ export class LoginPage {
     this.servico.getDadosProprietario(this.registerCredentials)
       .subscribe(
         res => this.storage.set('cliente', res.json())
+        
       );
   }
 
