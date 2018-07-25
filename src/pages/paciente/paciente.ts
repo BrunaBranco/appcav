@@ -20,11 +20,11 @@ export class PacientePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public service: ServicoProvider) {
 
-    storage.get('cliente').then((val) => {
-      console.log("val", val);
+    storage.get('cliente').then(val => {
+      console.log("cliente", val);
       service.getDadosPaciente(val).subscribe(res => {
         this.paciente = res.json();
-        console.log('cliente', this.paciente);
+        console.log('paciente', this.paciente);
       });
 
 

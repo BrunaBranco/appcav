@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import { Storage } from '@ionic/storage';
+import { ServicoProvider } from './servico';
 
 export class User {
   cpf: string;
@@ -16,14 +18,27 @@ export class User {
 export class AuthService {
   currentUser: User;
 
+  /**
+   *
+   */
+  constructor(public storage: Storage, public servico: ServicoProvider) {
+
+
+  }
+
   public loginL(credenciais) {
     if (credenciais.cpf === null || credenciais.ficha === null) {
       return Observable.throw("por favor insira suas credenciais");
     } else {
       return Observable.create(observer => {
         // At this point make a request to your backend to make a real check!
-        let access = (credenciais.ficha === "ficha" && credenciais.cpf === "cpf");
-        this.currentUser = new User('72040', '07108416980');
+        let access = true;
+        // let access = (credenciais.ficha === "ficha" && credenciais.cpf === "cpf");
+        this.currentUser = new User(credenciais.cpf, credenciais.ficha);
+
+        this.servico.getDadosProprietario(credenciais)
+          .subscribe(res => this.storage.set('cliente', res.json()))
+
         observer.next(access);
         observer.complete();
       });
@@ -43,7 +58,7 @@ export class AuthService {
   }
 
 
-  public getUserInfo() : User {
+  public getUserInfo(): User {
     return this.currentUser;
   }
 
