@@ -16,15 +16,17 @@ import { ServicoProvider } from '../../providers/servico/servico';
   templateUrl: 'paciente.html',
 })
 export class PacientePage {
-  paciente: any = {};
+  pacientes= [];
+
+  pet: string = "animais";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public service: ServicoProvider) {
 
     storage.get('cliente').then(val => {
       console.log("cliente", val);
       service.getDadosPaciente(val).subscribe(res => {
-        this.paciente = res.json();
-        console.log('paciente', this.paciente);
+        this.pacientes = res.json();
+        console.log('paciente', this.pacientes);
       });
 
 

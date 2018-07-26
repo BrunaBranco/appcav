@@ -17,12 +17,40 @@
 
 
 <ion-content padding>
-  <ion-item>
-    Nome: {{paciente.nome}}
-  </ion-item>
-  <!-- <ion-item>
-    <ion-label>Nome: {{paciente.nome}}</ion-label>
 
-  </ion-item> -->
+  <div padding>
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button value="animais">
+        <ion-icon name="paw"></ion-icon> Dados Animal
+      </ion-segment-button>
 
+      <ion-segment-button value="historico">
+        <ion-icon name="ios-folder-open"></ion-icon> Histórico
+      </ion-segment-button>
+
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="pet">
+
+    <ion-list *ngSwitchCase="'animais'">
+
+      <ion-item>
+        <ion-label>Nome: {{pacientes.nome}}</ion-label>
+      </ion-item>
+
+         
+
+     
+
+    </ion-list>
+
+
+    <ion-list *ngSwitchCase="'historico'">
+      <ion-item>
+        <ion-label>Histórico:</ion-label>
+      </ion-item>
+    </ion-list>
+
+  </div>
 </ion-content>
