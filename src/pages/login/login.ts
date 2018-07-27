@@ -39,8 +39,7 @@ export class LoginPage {
 
   getDadosPaciente() {
     this.servico.getDadosPaciente(this.registerCredentials)
-      .subscribe(res =>{
-          console.log("PACIENTE: ", res.json())
+      .subscribe(res =>{          
           this.storage.set('paciente', res.json());
         });
   }
@@ -48,8 +47,7 @@ export class LoginPage {
   // busca os dados de proprietario atraves das credencias
   getDadosProprietario() {
     this.servico.getDadosProprietario(this.registerCredentials)
-      .subscribe(res => {
-        console.log("CLIENTE: ", res.json())
+      .subscribe(res => {        
         this.storage.set('cliente', res.json())
       });
   }

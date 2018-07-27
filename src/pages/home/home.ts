@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { AuthService } from '../../providers/servico/auth-service';
 import { LoginPage } from '../login/login';
 import { ServicoProvider } from '../../providers/servico/servico';
 import { Storage } from '@ionic/storage';
+import { PacientePage } from '../paciente/paciente';
 
 
 @Component({
@@ -18,19 +19,21 @@ export class HomePage {
   senha = '';
   pacientes = [];
 
-  constructor(public navCtrl: NavController, private auth: AuthService, private storage: Storage, public service: ServicoProvider) {
+  constructor(public navCtrl: NavController, private auth: AuthService, private storage: Storage, public service: ServicoProvider, public navParams: NavParams) {
     let info = this.auth.getUserInfo();
     this.cpf = info['cpf'];
     this.senha = info['senha'];
 
+
+
     storage.get('cliente').then(val => {
-      console.log("cliente", val);
       service.getDadosPaciente(val).subscribe(res => {
         this.pacientes = res.json();
-        console.log('paciente', this.pacientes);
+
       });
 
     });
+
   }
 
 
@@ -42,6 +45,13 @@ export class HomePage {
 
   public trocarSenha() {
     this.navCtrl.push('trocar-senhar');
+  }
+
+  public selecionarAnimal(id: any) {
+    this.navCtrl.push(PacientePage, {
+      id: id,
+      nome:"nome"
+    });
   }
 
 }

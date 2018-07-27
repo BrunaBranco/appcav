@@ -14,14 +14,14 @@ import { Observable } from 'rxjs/Observable';
 */
 @Injectable()
 export class ServicoProvider {
-  servico:any;
+  servico: any;
 
 
   constructor(private http: Http) {
 
   }
 
-// faz login no sistema e carrega os dados da sessão
+  // faz login no sistema e carrega os dados da sessão
   login(user: any): Observable<Response> {
     let url = 'http://modelos.4pix.com.br/cav/SessaoAPI/login';
     return this.http.post(url, user);
@@ -32,9 +32,21 @@ export class ServicoProvider {
     let url = 'http://modelos.4pix.com.br/cav/AppAPI/proprietario/' + login.cpf + "/" + login.senha;
     return this.http.get(url);
   }
-  getDadosPaciente(proprietario: any){
-    let url= 'http://modelos.4pix.com.br/cav/AppAPI/pacientes/' + proprietario.id;
+  getDadosPaciente(proprietario: any) {
+    let url = 'http://modelos.4pix.com.br/cav/AppAPI/pacientes/' + proprietario.id;
     return this.http.get(url);
+  }
+
+  getPaciente(paciente: any) {
+    let url = 'http://modelos.4pix.com.br/cav/AppAPI/pacientes/' + paciente.id;
+    return this.http.get(url);
+  }
+
+  getAtendimento(atendimentoPaciente: any){
+    let url = 'http://modelos.4pix.com.br/cav/AppAPI/pacientes/' + atendimentoPaciente.id;
+    console.log(atendimentoPaciente.id);
+    return this.http.get(url);
+
   }
 
 

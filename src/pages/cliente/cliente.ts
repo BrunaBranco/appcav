@@ -23,7 +23,6 @@ export class ClientePage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
     storage.get('cliente').then(val => {
       this.teste = val || {};
-      console.log('cliente', val);
     });
   }
 

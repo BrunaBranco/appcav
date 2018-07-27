@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Storage } from '@ionic/storage';
 import { ServicoProvider } from '../../providers/servico/servico';
 
 /**
@@ -16,25 +15,14 @@ import { ServicoProvider } from '../../providers/servico/servico';
   templateUrl: 'paciente.html',
 })
 export class PacientePage {
-  pacientes= [];
+  paciente: any = {};
 
   pet: string = "animais";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public service: ServicoProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public service: ServicoProvider) {
 
-    // storage.get('cliente').then(val => {
-    //   console.log("cliente", val);
-    //   service.getDadosPaciente(val).subscribe(res => {
-    //     this.pacientes = res.json();
-    //     console.log('paciente', this.pacientes);
-    //   });
-
-
-
-    // });
-
+    this.paciente = navParams.get("id");  
+    service.getPaciente(this.paciente);
+    console.log(this.paciente);
   }
-
-
-
 }
