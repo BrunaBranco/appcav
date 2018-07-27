@@ -44,7 +44,7 @@ export class ServicoProvider {
   }
 
   getAtendimento(atendimentoPaciente: any){
-    let url = 'http://modelos.4pix.com.br/cav/AppAPI/pacientes/' + atendimentoPaciente.id;
+    let url = 'http://modelos.4pix.com.br/cav/AppAPI/atendimentos/' + atendimentoPaciente.id;
     console.log(atendimentoPaciente.id);
     return this.http.get(url);
 
