@@ -22,16 +22,16 @@ export class PacientePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public service: ServicoProvider) {
 
-    storage.get('cliente').then(val => {
-      console.log("cliente", val);
-      service.getDadosPaciente(val).subscribe(res => {
-        this.pacientes = res.json();
-        console.log('paciente', this.pacientes);
-      });
+    // storage.get('cliente').then(val => {
+    //   console.log("cliente", val);
+    //   service.getDadosPaciente(val).subscribe(res => {
+    //     this.pacientes = res.json();
+    //     console.log('paciente', this.pacientes);
+    //   });
 
 
 
-    });
+    // });
 
   }
 

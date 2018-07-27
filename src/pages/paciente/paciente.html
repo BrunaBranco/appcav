@@ -35,17 +35,10 @@
 
     <ion-list *ngSwitchCase="'animais'">
 
-      <ion-item>
-        <ion-label>Nome: {{pacientes.nome}}</ion-label>
+      <ion-item *ngFor = "let paciente of pacientes">
+        <ion-label>Nome: {{paciente.nome}}</ion-label>
       </ion-item>
-
-         
-
-     
-
     </ion-list>
-
-
     <ion-list *ngSwitchCase="'historico'">
       <ion-item>
         <ion-label>Histórico:</ion-label>

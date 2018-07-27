@@ -29,7 +29,7 @@ export class ServicoProvider {
 
   // atraves do login retorna os dados do proprietario do animal
   getDadosProprietario(login: any): Observable<Response> {
-    let url = 'http://modelos.4pix.com.br/cav/AppAPI/proprietario/' + login.cpf + "/" + login.ficha;
+    let url = 'http://modelos.4pix.com.br/cav/AppAPI/proprietario/' + login.cpf + "/" + login.senha;
     return this.http.get(url);
   }
   getDadosPaciente(proprietario: any){

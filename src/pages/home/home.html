@@ -16,27 +16,22 @@
 
 <ion-content padding class="cor">
 
-  <ion-card color="newccolor">
+ 
+  <img src="../../../../assets/imgs/logo1.png" />
 
-    <img src="../../../../assets/imgs/logo-cav.png" />
 
+  <ion-card color="light" *ngFor="let paciente of pacientes">
     <ion-card-content>
       <ion-card-title>
-       LinceApp
+        Animal: {{paciente.nome}}
       </ion-card-title>
-      <p>
-       Bem vindo ao aplicativo LINCE aqui você pode ter acesso a informações sem burocrácia,
-        sem precisar ficar fazendo ligações ou mandando e-mail.
-      </p>
-      <p>
-        Acesso o nosso menu ao lado para escolher a opção desejada.
-      </p>
+
+      <button ion-button>Ver dados do animal</button>
 
     </ion-card-content>
-    <!-- <button ion-button class="register-btn" block clear (click)="trocarSenha()">Trocar senha</button> -->
-
-
   </ion-card>
 
+  
+  <!-- <button ion-button class="register-btn" block clear (click)="trocarSenha()">Trocar senha</button> -->
 
 </ion-content>

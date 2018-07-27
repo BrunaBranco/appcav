@@ -6,11 +6,11 @@ import { ServicoProvider } from './servico';
 
 export class User {
   cpf: string;
-  ficha: string;
+  senha: string;
 
-  constructor(cpf: string, ficha: string) {
+  constructor(cpf: string, senha: string) {
     this.cpf = cpf;
-    this.ficha = ficha;
+    this.senha = senha;
   }
 }
 
@@ -27,14 +27,14 @@ export class AuthService {
   }
 
   public loginL(credenciais) {
-    if (credenciais.cpf === null || credenciais.ficha === null) {
+    if (credenciais.cpf === null || credenciais.senha === null) {
       return Observable.throw("por favor insira suas credenciais");
     } else {
       return Observable.create(observer => {
         // At this point make a request to your backend to make a real check!
         let access = true;
-        // let access = (credenciais.ficha === "ficha" && credenciais.cpf === "cpf");
-        this.currentUser = new User(credenciais.cpf, credenciais.ficha);
+       
+        this.currentUser = new User(credenciais.cpf, credenciais.senha);
 
         this.servico.getDadosProprietario(credenciais)
           .subscribe(res => this.storage.set('cliente', res.json()))
@@ -46,7 +46,7 @@ export class AuthService {
   }
 
   public trocarSenha(trocarSenha) {
-    if (trocarSenha.cpf === null || trocarSenha.ficha === null) {
+    if (trocarSenha.cpf === null || trocarSenha.senha === null) {
       return Observable.throw("Por favor insera seus dados");
     } else {
       // At this point store the credentials to your backend!

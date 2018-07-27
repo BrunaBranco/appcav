@@ -26,14 +26,14 @@ export class LoginPage {
   login: any;
 
   loading: Loading;
-  registerCredentials = { ficha: '', cpf: '' };
+  registerCredentials = { senha: '', cpf: '' };
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private servico: ServicoProvider, private auth: AuthService,
     private alertCtrl: AlertController, private loadingCtrl: LoadingController, private storage: Storage) {
 
-      this.registerCredentials.ficha = "72049";
+      this.registerCredentials.senha = "0710";
       this.registerCredentials.cpf = "07108416980";
   }
 

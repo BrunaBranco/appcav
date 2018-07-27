@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { LoginPage } from '../pages/login/login';
 import { PacientePage } from '../pages/paciente/paciente';
+import {HistoricoPage} from '../pages/historico/historico';
 
 import { ClientePage } from '../pages/cliente/cliente';
 import { HomePage } from '../pages/home/home';
@@ -32,7 +33,8 @@ export class MyApp {
       { title: 'Dados do Cliente', component: ClientePage },
       { title: 'Dados do Paciente', component: PacientePage },
       { title: 'Dados Financeiro', component: FinanceiroPage },
-      { title: ' Acompanhar atendimento', component: AtendimentoPage }
+      { title: ' Acompanhar atendimento', component: AtendimentoPage },
+      {title: 'Historico', component: HistoricoPage}
 
     ];
 

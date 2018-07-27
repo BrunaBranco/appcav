@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { PacientePage } from '../pages/paciente/paciente';
+import{HistoricoPage} from '../pages/historico/historico';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -21,6 +22,7 @@ import {AtendimentoPage} from '../pages/atendimento/atendimento';
 import { TrocarSenhaPage } from '../pages/trocar-senha/trocar-senha';
 
 
+
 @NgModule({
   declarations: [
     MyApp,
@@ -30,7 +32,8 @@ import { TrocarSenhaPage } from '../pages/trocar-senha/trocar-senha';
     PacientePage,
     FinanceiroPage,
     AtendimentoPage,
-    TrocarSenhaPage
+    TrocarSenhaPage,
+    HistoricoPage
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import { TrocarSenhaPage } from '../pages/trocar-senha/trocar-senha';
     PacientePage,
     FinanceiroPage,
     AtendimentoPage,
-    TrocarSenhaPage
+    TrocarSenhaPage,
+    HistoricoPage
   ],
   providers: [
     StatusBar,

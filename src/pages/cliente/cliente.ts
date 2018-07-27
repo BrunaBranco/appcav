@@ -20,7 +20,6 @@ export class ClientePage {
   teste: any = {};
   pet: string = "puppies";
 
-
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
     storage.get('cliente').then(val => {
       this.teste = val || {};
