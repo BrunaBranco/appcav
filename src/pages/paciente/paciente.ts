@@ -20,9 +20,12 @@ export class PacientePage {
   pet: string = "animais";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public service: ServicoProvider) {
+    let idPaciente = navParams.get("id");
+    console.log(idPaciente);
 
-    this.paciente = navParams.get("id");  
-    service.getPaciente(this.paciente);
-    console.log(this.paciente);
+    service.getPaciente(idPaciente).subscribe(res => {
+      this.paciente = res.json();      
+    console.log("paciente: ", this.paciente);
+    });
   }
 }
