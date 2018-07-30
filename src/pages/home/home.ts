@@ -5,6 +5,8 @@ import { LoginPage } from '../login/login';
 import { ServicoProvider } from '../../providers/servico/servico';
 import { Storage } from '@ionic/storage';
 import { PacientePage } from '../paciente/paciente';
+import { HistoricoPage } from '../historico/historico';
+
 
 
 @Component({
@@ -49,8 +51,8 @@ export class HomePage {
 
   public selecionarAnimal(id: any) {
     this.navCtrl.push(PacientePage, {
-      id: id,
-      nome:"nome"
+      id: id
+
     });
   }
 

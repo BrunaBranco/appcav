@@ -7,6 +7,11 @@
       <img src="../../../../assets/imgs/logo-cav.png" style="width: 67px" />
     </ion-title>
     <ion-buttons end>
+      <button ion-button>
+        <ion-icon name="md-person"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
       <button ion-button (click)="logout()">
         <ion-icon name="log-out"></ion-icon>
       </button>
@@ -16,7 +21,7 @@
 
 <ion-content padding class="cor">
 
- 
+
   <img src="../../../../assets/imgs/logo1.png" />
 
 
@@ -26,12 +31,16 @@
         Animal: {{paciente.nome}}
       </ion-card-title>
 
+      <ion-buttons>
+        <button> Status: Em desenvolvimento</button>
+      </ion-buttons>
+
       <button ion-button (click)="selecionarAnimal(paciente.id)">Ver dados do animal</button>
 
     </ion-card-content>
   </ion-card>
 
-  
+
   <!-- <button ion-button class="register-btn" block clear (click)="trocarSenha()">Trocar senha</button> -->
 
 </ion-content>

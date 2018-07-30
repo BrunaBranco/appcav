@@ -24,7 +24,7 @@
       </ion-segment-button>
 
       <ion-segment-button value="historico">
-        <ion-icon name="ios-folder-open"></ion-icon> Histórico
+        <ion-icon name="ios-calendar"></ion-icon> Atendimentos
       </ion-segment-button>
 
     </ion-segment>
@@ -33,32 +33,75 @@
   <div [ngSwitch]="pet">
 
     <ion-list *ngSwitchCase="'animais'">
-
-      <ion-item>
-
-        <ion-label>Nome: {{paciente.nome}}</ion-label>
-
-      </ion-item>
-
       <ion-item>
         <ion-label>Ficha: {{paciente.numero_ficha}}</ion-label>
       </ion-item>
 
       <ion-item>
+        <ion-label>Nome: {{paciente.nome}}</ion-label>
+      </ion-item>
+
+      <ion-item>
         <ion-label>Sexo: {{paciente.sexo}}</ion-label>
       </ion-item>
-      
+
       <ion-item>
         <ion-label>Data de nascimento: {{paciente.data_nascimento}}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Cor: {{paciente.cor}}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Raça: {{paciente.raca}}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Especie: {{paciente.especie}}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Porte: {{paciente.porte}}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Temperamento: {{paciente.temperamento}}</ion-label>
       </ion-item>
 
     </ion-list>
 
     <ion-list *ngSwitchCase="'historico'">
-      <ion-item>
-        <ion-label>Histórico:</ion-label>
-      </ion-item>
-    </ion-list>
+      <ion-title>Atendimentos {{paciente.nome}}</ion-title>
+      <!-- <ion-label>Nome: </ion-label> -->
+      <ion-card color="light" *ngFor="let at of atendimento">
 
+        <ion-card-content>
+          <ion-card-title>
+            <ion-item>
+              Data: {{at.data}}
+              <br> Hora: {{at.hora}}
+              <br> Atendente: {{at.usuario_atendimento}}
+              <br> Tipo: {{at.emergencia}}
+              <br> Responsável: {{at.tipo}}
+              <br> Observação: {{at.observacao}}
+              <br> Terminou: {{at.fim_atendimento}}
+              <br>
+            </ion-item>
+          </ion-card-title>
+        </ion-card-content>
+        <ion-buttons>
+          <button ion-button (click)="financeiro(at.id)" class="botao">Financeiro
+            <ion-icon name="ios-calculator" class="icone"> </ion-icon>
+          </button>
+        </ion-buttons>
+        <ion-buttons>
+          <button ion-button (click)="historico(at.id)" class="botao">Histórico
+            <ion-icon name="ios-folder-open" class="icone"> </ion-icon>
+          </button>
+        </ion-buttons>
+
+      </ion-card>
+    </ion-list>
   </div>
 </ion-content>

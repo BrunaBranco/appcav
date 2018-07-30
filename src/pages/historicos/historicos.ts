@@ -2,10 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ServicoProvider } from '../../providers/servico/servico';
 import { Storage } from '@ionic/storage';
-import { HistoricosPage } from '../historicos/historicos';
 
 /**
- * Generated class for the HistoricoPage page.
+ * Generated class for the HistoricosPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -13,20 +12,22 @@ import { HistoricosPage } from '../historicos/historicos';
 
 @IonicPage()
 @Component({
-  selector: 'page-historico',
-  templateUrl: 'historico.html',
+  selector: 'page-historicos',
+  templateUrl: 'historicos.html',
 })
-export class HistoricoPage {
-  pacientes = [];
-
+export class HistoricosPage {
+  historicos=[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public service: ServicoProvider) {
+    let id_Agendamento = navParams.get("id");
+    console.log("agendamento:", id_Agendamento);
 
-    storage.get('cliente').then(val => {
-      service.getDadosPaciente(val).subscribe(res => {
-        this.pacientes = res.json();
-      });
+    service.getHistorico(id_Agendamento).subscribe(res => {
+      this.historicos = res.json();
+      console.log("historicoooo: ", this.historicos);
     });
   }
+
+
 
 }

@@ -6,13 +6,29 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>historico</ion-title>
+  <ion-navbar color="mycolor">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Ver histórico</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding>
+
+  <ion-card color="light" *ngFor="let paciente of pacientes">
+    <ion-card-content>
+      <ion-card-title>
+        Animal: {{paciente.nome}}
+      </ion-card-title>
+
+      <!-- <button ion-button>Ver Histórico completo</button> -->
+      <button ion-button (click)="historico()">Ver Histórico</button>
+
+
+
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

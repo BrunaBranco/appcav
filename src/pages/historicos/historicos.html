@@ -1,5 +1,5 @@
 <!--
-  Generated template for the FinanceiroPage page.
+  Generated template for the HistoricosPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -10,26 +10,24 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>financeiro</ion-title>
+    <ion-title>historico detalhado</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-card-title>Histórico de Paciente</ion-card-title>
   <ion-card color="light">
-
     <ion-card-content>
       <ion-card-title>
-        <ion-item *ngFor="let f of financeiros">
-          Valor: {{f.valor}}
-          <br> Nº parcelas: {{f.numero_parcela}}
+        <ion-item *ngFor="let h of historicos">
+          {{h.icone}}<br>
+          {{h.nome}}<br>
+          {{h.data}}<br>
         </ion-item>
       </ion-card-title>
     </ion-card-content>
-
-
   </ion-card>
 
 </ion-content>

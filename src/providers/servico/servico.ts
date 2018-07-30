@@ -36,20 +36,27 @@ export class ServicoProvider {
     let url = 'http://modelos.4pix.com.br/cav/AppAPI/pacientes/' + proprietario.id;
     return this.http.get(url);
   }
-  
+
   getPaciente(idPaciente: any) {
     let url = 'http://modelos.4pix.com.br/cav/AppAPI/paciente/' + idPaciente;
-    console.log("id paciente: ", idPaciente);
     return this.http.get(url);
   }
 
-  getAtendimento(atendimentoPaciente: any){
-    let url = 'http://modelos.4pix.com.br/cav/AppAPI/atendimentos/' + atendimentoPaciente.id;
-    console.log(atendimentoPaciente.id);
+  getAtendimento(idPaciente: any) {
+    let url = 'http://modelos.4pix.com.br/cav/AppAPI/atendimentos/' + idPaciente;
     return this.http.get(url);
-
   }
 
+  getFinanceiro(idAgendamento) {
+    let url = 'http://modelos.4pix.com.br/cav/AppAPI/financeiro/' + idAgendamento;
+    console.log("id agendamento: ", idAgendamento);
+    return this.http.get(url);
+  }
+  getHistorico(id_Agendamento) {
+    let url = 'http://modelos.4pix.com.br/cav/AppAPI/historico/' + id_Agendamento;
+    console.log("id historico: ", id_Agendamento);
+    return this.http.get(url);
+  }
 
 
   // buscarCliente() {
