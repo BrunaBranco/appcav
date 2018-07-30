@@ -5,6 +5,8 @@ import { LoginPage } from '../login/login';
 import { ServicoProvider } from '../../providers/servico/servico';
 import { Storage } from '@ionic/storage';
 import { PacientePage } from '../paciente/paciente';
+import { HistoricoPage } from '../historico/historico';
+
 
 
 @Component({
@@ -18,13 +20,14 @@ export class HomePage {
   cpf = '';
   senha = '';
   pacientes = [];
+  atendimento: any = {};
+
 
   constructor(public navCtrl: NavController, private auth: AuthService, private storage: Storage, public service: ServicoProvider, public navParams: NavParams) {
     let info = this.auth.getUserInfo();
     this.cpf = info['cpf'];
     this.senha = info['senha'];
-
-
+    let idAtendimento = navParams.get("id");
 
     storage.get('cliente').then(val => {
       service.getDadosPaciente(val).subscribe(res => {
@@ -33,6 +36,10 @@ export class HomePage {
       });
 
     });
+
+    // service.getAtendimento(idAtendimento).subscribe(res => {
+    //   this.atendimento = res.json();
+    // });
 
   }
 
@@ -49,8 +56,8 @@ export class HomePage {
 
   public selecionarAnimal(id: any) {
     this.navCtrl.push(PacientePage, {
-      id: id,
-      nome:"nome"
+      id: id
+
     });
   }
 

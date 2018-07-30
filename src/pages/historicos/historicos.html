@@ -1,5 +1,5 @@
 <!--
-  Generated template for the HistoricoPage page.
+  Generated template for the HistoricosPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -10,24 +10,23 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Ver histórico</ion-title>
+    <ion-title>historico detalhado</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-<ion-content padding>
 
-  <ion-card color="light" *ngFor="let paciente of pacientes">
+<ion-content padding>
+  <ion-card-title>Histórico de Paciente</ion-card-title>
+  <ion-card color="light">
     <ion-card-content>
       <ion-card-title>
-        Animal: {{paciente.nome}}
+        <ion-item *ngFor="let h of historicos">
+          {{h.icone}}<br>
+          {{h.nome}}<br>
+          {{h.data}}<br>
+        </ion-item>
       </ion-card-title>
-
-      <!-- <button ion-button>Ver Histórico completo</button> -->
-      <button ion-button (click)="historico()">Ver Histórico</button>
-
-
-
     </ion-card-content>
   </ion-card>
 

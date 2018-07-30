@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ServicoProvider } from '../../providers/servico/servico';
 
 /**
  * Generated class for the FinanceiroPage page.
@@ -14,12 +15,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'financeiro.html',
 })
 export class FinanceiroPage {
+  financeiros = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public service: ServicoProvider) {
+
+    let idAgendamento = navParams.get("id");
+
+    service.getFinanceiro(idAgendamento).subscribe(res => {
+      this.financeiros = res.json();
+      console.log("id fin", this.financeiros);
+    });
+
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad FinanceiroPage');
-  }
-
 }

@@ -17,6 +17,30 @@
 
 
 <ion-content padding>
-  <ion-item>Você ainda não pode visualizar esta opção por que ela ainda esta em desenvolvimento</ion-item>
+
+  <ion-card color="light">
+
+    <ion-card-content>
+
+
+      <ion-card-title *ngIf="financeiros">
+        <ion-item *ngFor="let f of financeiros">
+          Valor: {{f.valor}}<br>
+          Nº parcelas: {{f.numero_parcela}}
+        </ion-item>
+      </ion-card-title>
+
+      <ion-card-title>
+        Não foi gerado financeiro para esse atendimento, isso pode ter ocorrido por um dos motivos:<br>
+        - Aula prática<br>
+        - Retorno de consulta<br>
+        - Baixa renda familiar<br>
+        <br>Obrigado por utilizar nossos serviços
+      </ion-card-title>
+
+    </ion-card-content>
+
+
+  </ion-card>
 
 </ion-content>
