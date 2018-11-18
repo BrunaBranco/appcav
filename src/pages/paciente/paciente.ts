@@ -27,7 +27,6 @@ export class PacientePage {
     let idPaciente = navParams.get("id");
     let idAtendimento = navParams.get("id");
 
-
     service.getPaciente(idPaciente).subscribe(res => {
       this.paciente = res.json();
       console.log("id paciente: ", this.paciente);

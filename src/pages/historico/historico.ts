@@ -18,6 +18,7 @@ import { HistoricosPage } from '../historicos/historicos';
 })
 export class HistoricoPage {
   pacientes = [];
+
   atendimento: any = {};
 
 
@@ -33,7 +34,10 @@ export class HistoricoPage {
   public historico(id: any) {
     this.navCtrl.push(HistoricosPage, {
       id: id
-    });
+
+
+
+     });
   }
 
 }
