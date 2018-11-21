@@ -39,6 +39,7 @@ export class ServicoProvider {
 
   getPaciente(idPaciente: any) {
     let url = 'http://modelos.4pix.com.br/cav/AppAPI/paciente/' + idPaciente;
+    console.log("id Lady: ", idPaciente);
     return this.http.get(url);
   }
 
@@ -61,9 +62,9 @@ export class ServicoProvider {
     console.log("Agendamento ID: ", id_Agendamento);
     return this.http.get(url);
   }
-  getRequisicao(id_Pacient) {
-    let url = 'http://modelos.4pix.com.br/cav/AppAPI/requisicao/' + id_Pacient;
-    console.log("id Requisicao: ", id_Pacient);
+  getRequisicao(id_Paciente) {
+    let url = 'http://modelos.4pix.com.br/cav/AppAPI/requisicao/' + id_Paciente;
+    console.log("id Requisicao: ", id_Paciente);
     return this.http.get(url);
   }
 
