@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ServicoProvider } from '../../providers/servico/servico';
 import { FinanceiroPage } from '../financeiro/financeiro';
 import { HistoricosPage } from '../historicos/historicos';
+import { ExamePage } from '../exame/exame';
 
 /**
  * Generated class for the PacientePage page.
@@ -53,4 +54,12 @@ export class PacientePage {
       id: id
     });
   }
+
+
+  public equisicaoExame(id: any) {
+    this.navCtrl.push(ExamePage, {
+      id: id
+    });
+  }
+
 }

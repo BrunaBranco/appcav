@@ -58,13 +58,14 @@ export class ServicoProvider {
   }
   getHistorico(id_Agendamento) {
     let url = 'http://modelos.4pix.com.br/cav/AppAPI/historico/' + id_Agendamento;
+    console.log("Agendamento ID: ", id_Agendamento);
     return this.http.get(url);
   }
-  // getRequisicao(id_Pacient) {
-  //   let url = 'http://modelos.4pix.com.br/cav/AppAPI/requisicao/' + id_Pacient;
-  //   console.log("id Requisicao: ", id_Pacient);
-  //   return this.http.get(url);
-  // }
+  getRequisicao(id_Pacient) {
+    let url = 'http://modelos.4pix.com.br/cav/AppAPI/requisicao/' + id_Pacient;
+    console.log("id Requisicao: ", id_Pacient);
+    return this.http.get(url);
+  }
 
 
   // buscarCliente() {

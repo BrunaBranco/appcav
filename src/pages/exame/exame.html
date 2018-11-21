@@ -14,5 +14,16 @@
 
 
 <ion-content padding>
-aqui iria a parte de requisição de exame
+  <ion-card-title>Requisicao de Exame</ion-card-title>
+  <ion-card color="light">
+    <ion-card-content>
+      <ion-card-title>
+        <ion-item *ngFor="let r of requisicao">
+
+          {{r.data}}<br>
+          <br>
+        </ion-item>
+      </ion-card-title>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

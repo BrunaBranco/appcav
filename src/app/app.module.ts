@@ -21,6 +21,7 @@ import { FinanceiroPage } from '../pages/financeiro/financeiro';
 import { AtendimentoPage } from '../pages/atendimento/atendimento';
 import { TrocarSenhaPage } from '../pages/trocar-senha/trocar-senha';
 import { HistoricosPage } from '../pages/historicos/historicos';
+import {ExamePage} from '../pages/exame/exame';
 
 
 
@@ -35,7 +36,8 @@ import { HistoricosPage } from '../pages/historicos/historicos';
     AtendimentoPage,
     TrocarSenhaPage,
     HistoricoPage,
-    HistoricosPage
+    HistoricosPage,
+    ExamePage
   ],
   imports: [
     BrowserModule,
@@ -53,8 +55,8 @@ import { HistoricosPage } from '../pages/historicos/historicos';
     FinanceiroPage,
     AtendimentoPage,
     TrocarSenhaPage,
-    HistoricoPage,
-    HistoricosPage
+    HistoricosPage,
+    ExamePage
   ],
   providers: [
     StatusBar,

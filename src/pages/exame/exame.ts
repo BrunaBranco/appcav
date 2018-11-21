@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { ServicoProvider } from '../../providers/servico/servico';
+import { Storage } from '@ionic/storage';
 /**
  * Generated class for the ExamePage page.
  *
@@ -14,9 +15,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'exame.html',
 })
 export class ExamePage {
+  requisicao=[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,  private storage: Storage, public service: ServicoProvider) {
+    let id_Requisicao = navParams.get("id");
+    console.log("agendamento:", id_Requisicao);
+
+    service.getRequisicao(id_Requisicao).subscribe(res => {
+      this.requisicao = res.json();
+      console.log("historicoooo: ", this.requisicao);
+    });
   }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ExamePage');
