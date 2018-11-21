@@ -10,6 +10,7 @@ import { ClientePage } from '../pages/cliente/cliente';
 import { HomePage } from '../pages/home/home';
 // import { FinanceiroPage } from '../pages/financeiro/financeiro';
 import { AtendimentoPage } from '../pages/atendimento/atendimento';
+import { ExamePage } from '../pages/exame/exame';
 
 
 
@@ -30,10 +31,11 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Dados do Cliente', component: ClientePage },
+      { title: 'Requisições de Exame', component: ExamePage}
       // { title: 'Dados do Paciente', component: PacientePage },
       // { title: 'Dados Financeiro', component: FinanceiroPage },
-      { title: ' Acompanhar atendimento', component: AtendimentoPage },
-      {title: 'Historico', component: HistoricoPage}
+      // { title: ' Acompanhar atendimento', component: AtendimentoPage },
+      // {title: 'Historico', component: HistoricoPage}
 
     ];
 
