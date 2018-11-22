@@ -18,14 +18,14 @@
 
 <ion-content padding>
   <ion-card-title>Histórico de Paciente</ion-card-title>
-  <ion-card color="light">
+  <ion-card color="light" *ngFor="let h of historicos">
     <ion-card-content>
-      <ion-card-title>
-        <ion-item *ngFor="let h of historicos">
+      <ion-card-title class="fonte" >
 
-          {{h.nome}}<br>
-          {{h.data}}<br>
-        </ion-item>
+         Quantidade: {{h.quantidade}}<br>
+         Descrição: {{h.descricao}}<br>
+         Data: {{h.data}}<br>
+         Usuario: {{h.nome}}
       </ion-card-title>
     </ion-card-content>
   </ion-card>

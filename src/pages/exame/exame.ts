@@ -15,7 +15,7 @@ import { Storage } from '@ionic/storage';
   templateUrl: 'exame.html',
 })
 export class ExamePage {
-  requisicao=[];
+  requisicao:Array<any>=[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,  private storage: Storage, public service: ServicoProvider) {
 
@@ -24,7 +24,8 @@ export class ExamePage {
     console.log("agendamento:", id_Agendamento);
 
     service.getRequisicao(id_Agendamento).subscribe(res => {
-      this.requisicao = res.json();
+      let requisicoes = res.json();
+      this.requisicao =Array.isArray(requisicoes) ? requisicoes : [requisicoes]
       console.log("requisição concluida: ", this.requisicao);
     });
   }

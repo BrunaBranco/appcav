@@ -55,6 +55,7 @@ export class ServicoProvider {
 
   getFinanceiro(idAgendamento) {
     let url = 'http://modelos.4pix.com.br/cav/AppAPI/financeiro/' + idAgendamento;
+    console.log("Agendamento ID no financeiro: ", idAgendamento);
     return this.http.get(url);
   }
   getHistorico(id_Agendamento) {

@@ -16,27 +16,19 @@
 </ion-header>
 
 
-<ion-content padding>
-  <ion-card-title>Requisições</ion-card-title>
-  <ion-card color="light">
-    <ion-card-content>
-      <ion-card-title>
-        <ion-item *ngFor="let r of requisicao">
-          {{r.requisicao}}<br>
+<ion-content padding >
 
+  <!-- <ion-card-title>Requisições</ion-card-title> -->
+  <ion-card class="teste" color="light" *ngFor="let r of requisicao">
+    <ion-card-content class="fontes" >
+        <div [innerHTML]="r.requisicao"></div>
 
-          <div [ngSwitch]="r.situacao">
-            <label *ngSwitchCase="'0'" class="cor14">Status: Aguardando</label>
-            <label *ngSwitchCase="'1'" class="cor13">Status: Aceito</label>
-            <label *ngSwitchCase="'3'" class="cor12">Status: Concluido</label>
-            <label *ngSwitchCase="'4'" class="cor11">Status: Cancelado</label>
-          </div>
-
-
-          {{r.situacao}}
-          <br>
-        </ion-item>
-      </ion-card-title>
+        <div [ngSwitch]="r.situacao">
+          <label *ngSwitchCase="'0'" class="cor11">Situação: Aguardando</label>
+          <label *ngSwitchCase="'1'" class="cor12">Situação: Aceito</label>
+          <label *ngSwitchCase="'3'" class="cor12">Situação: Concluido</label>
+          <label *ngSwitchCase="'4'" class="cor14">Situação: Cancelado</label>
+        </div>
     </ion-card-content>
   </ion-card>
 </ion-content>
