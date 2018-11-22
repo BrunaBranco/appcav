@@ -18,12 +18,14 @@ export class ExamePage {
   requisicao=[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,  private storage: Storage, public service: ServicoProvider) {
-    let id_Requisicao = navParams.get("id");
-    console.log("agendamento:", id_Requisicao);
 
-    service.getRequisicao(id_Requisicao).subscribe(res => {
+
+    let id_Agendamento = navParams.get("id");
+    console.log("agendamento:", id_Agendamento);
+
+    service.getRequisicao(id_Agendamento).subscribe(res => {
       this.requisicao = res.json();
-      console.log("historicoooo: ", this.requisicao);
+      console.log("requisição concluida: ", this.requisicao);
     });
   }
 

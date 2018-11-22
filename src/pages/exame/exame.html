@@ -6,20 +6,34 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>exame</ion-title>
+  <ion-navbar color="mycolor">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Requisição de exame</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <ion-card-title>Requisicao de Exame</ion-card-title>
+  <ion-card-title>Requisições</ion-card-title>
   <ion-card color="light">
     <ion-card-content>
       <ion-card-title>
         <ion-item *ngFor="let r of requisicao">
           {{r.requisicao}}<br>
+
+
+          <div [ngSwitch]="r.situacao">
+            <label *ngSwitchCase="'0'" class="cor14">Status: Aguardando</label>
+            <label *ngSwitchCase="'1'" class="cor13">Status: Aceito</label>
+            <label *ngSwitchCase="'3'" class="cor12">Status: Concluido</label>
+            <label *ngSwitchCase="'4'" class="cor11">Status: Cancelado</label>
+          </div>
+
+
+          {{r.situacao}}
           <br>
         </ion-item>
       </ion-card-title>

@@ -62,9 +62,9 @@ export class ServicoProvider {
     console.log("Agendamento ID: ", id_Agendamento);
     return this.http.get(url);
   }
-  getRequisicao(id_Paciente) {
-    let url = 'http://modelos.4pix.com.br/cav/AppAPI/requisicao/' + id_Paciente;
-    console.log("id Requisicao: ", id_Paciente);
+  getRequisicao(id_Agendamento) {
+    let url = 'http://modelos.4pix.com.br/cav/AppAPI/requisicao/' + id_Agendamento;
+    console.log("id Requisicao: ", id_Agendamento);
     return this.http.get(url);
   }
 
